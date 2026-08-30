@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konten Belajar Koding dan Kecerdasan Artifisial SMK Kelas X - Literasi Digital & Audit Data Teknis</title>
+    <style>
+        :root {
+            --primary-color: #1a365d;
+            --secondary-color: #2b6cb0;
+            --accent-color: #319795;
+            --bg-color: #f7fafc;
+            --card-bg: #ffffff;
+            --text-color: #2d3748;
+            --border-color: #e2e8f0;
+            --success-color: #2f855a;
+            --success-bg: #f0fff4;
+            --danger-color: #c53030;
+            --danger-bg: #fff5f5;
+            --warning-color: #c05621;
+            --warning-bg: #fffaf0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 26px;
+        }
+
+        .header .subtitle {
+            font-size: 16px;
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            background: #edf2f7;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .meta-item {
+            font-size: 14px;
+        }
+
+        .meta-item strong {
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .jurusan-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tag {
+            background: var(--secondary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--secondary-color);
+            padding-left: 12px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        h3 {
+            color: var(--secondary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            font-size: 17px;
+        }
+
+        h4 {
+            color: var(--text-color);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        p, li {
+            text-align: justify;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        .flow-container {
+            background: #edf2f7;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin: 20px 0;
+            font-family: inherit;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 13.5px;
+        }
+
+        table, th, td {
+            border: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px 12px;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .case-card {
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 18px;
+            margin-bottom: 20px;
+            background: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+
+        .case-card h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        /* --- STYLING FORMULARIS DAN AUDIT --- */
+        .form-box {
+            border: 2px solid var(--secondary-color);
+            padding: 24px;
+            border-radius: 8px;
+            margin: 25px 0;
+            background: #faf5ff;
+        }
+
+        .form-title {
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .form-section-head {
+            font-weight: bold;
+            color: var(--primary-color);
+            background: #ebf8ff;
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin: 18px 0 12px 0;
+            font-size: 14px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-color);
+            min-width: 180px;
+        }
+
+        .form-group input[type="text"] {
+            flex: 1;
+            min-width: 220px;
+            border: none;
+            border-bottom: 1px dashed #718096;
+            background: transparent;
+            padding: 4px 8px;
+            font-size: 14px;
+            outline: none;
+        }
+
+        .form-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 6px 0 12px 0;
+            font-size: 13.5px;
+            padding-left: 10px;
+        }
+
+        .form-options label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .form-table-inner {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            background: white;
+        }
+
+        .form-table-inner th, .form-table-inner td {
+            border: 1px solid var(--border-color);
+            padding: 8px 10px;
+            font-size: 13px;
+        }
+
+        .form-table-inner th {
+            background-color: #edf2f7;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .form-textarea {
+            width: 100%;
+            min-height: 50px;
+            border: 1px dashed #cbd5e0;
+            border-radius: 4px;
+            background: #fff;
+            padding: 8px;
+            box-sizing: border-box;
+            margin-top: 5px;
+        }
+
+        .signature-block {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 25px;
+            text-align: center;
+            font-size: 13.5px;
+        }
+
+        .signature-box {
+            width: 250px;
+        }
+
+        .signature-space {
+            height: 45px;
+        }
+
+        /* --- STYLING DRAF DOKUMEN SAMPLER --- */
+        .doc-box {
+            font-size: 13.5px;
+            line-height: 1.6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .doc-box hr {
+            border: 0;
+            border-top: 1px dashed rgba(0,0,0,0.15);
+            margin: 12px 0;
+        }
+
+        .doc-header-title {
+            font-weight: bold;
+            font-size: 15px;
+            margin-top: 4px;
+        }
+
+        .doc-meta-sub {
+            font-size: 12.5px;
+            opacity: 0.85;
+        }
+
+        .doc-asli {
+            background-color: var(--success-bg);
+            border: 1px solid #c6f6d5;
+            color: #22543d;
+        }
+
+        .doc-hoaks {
+            background-color: var(--danger-bg);
+            border: 1px solid #fed7d7;
+            color: #742a2a;
+        }
+
+        .doc-title {
+            font-weight: bold;
+            font-size: 13px;
+            margin-bottom: 10px;
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+
+        .doc-asli .doc-title {
+            background-color: #38a169;
+            color: white;
+        }
+
+        .doc-hoaks .doc-title {
+            background-color: #e53e3e;
+            color: white;
+        }
+
+        .kunci-jawaban {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-color);
+            padding: 12px 15px;
+            margin-top: 10px;
+            font-size: 13.5px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .formula-box {
+            background: #ebf8ff;
+            border: 1px solid #bee3f8;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #2b6cb0;
+        }
+
+        /* --- STYLING BUTTON CETAK DOKUMEN --- */
+        .btn-print-container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin: 15px 0;
+        }
+
+        .btn-print {
+            background-color: var(--secondary-color);
+            color: #ffffff;
+            border: none;
+            padding: 10px 18px;
+            font-size: 13.5px;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn-print:hover {
+            background-color: var(--primary-color);
+        }
+
+        .btn-print:active {
+            transform: scale(0.98);
+        }
+
+        /* --- STYLING REGULER SAAT PRINT SELURUH DOKUMEN --- */
+        @media print {
+            body { 
+                background: white; 
+                padding: 0; 
+                color: #000;
+            }
+            .container { 
+                box-shadow: none; 
+                max-width: 100%; 
+                padding: 0; 
+            }
+            .page-break { 
+                page-break-before: always; 
+            }
+            .btn-print-container, .no-print { 
+                display: none !important; 
+            }
+            .form-box {
+                border: 1px solid #4a5568 !important;
+                background: #ffffff !important;
+                page-break-inside: avoid;
+            }
+            @page {
+                size: A4;
+                margin: 1.5cm;
+            }
+
+            /* --- ATURAN CETAK KHUSUS KETIKA HANYA DUA/SATU FORM JURUSAN YANG DICETAK --- */
+            body.print-single * {
+                visibility: hidden !important;
+            }
+            body.print-single .print-target-active,
+            body.print-single .print-target-active * {
+                visibility: visible !important;
+            }
+            body.print-single .print-target-active {
+                position: absolute !important;
+                left: 0 !important;
+                top: 0 !important;
+                width: 100% !important;
+                margin: 0 !important;
+                padding: 20px !important;
+                border: 2px solid var(--primary-color) !important;
+                background: #ffffff !important;
+                box-sizing: border-box !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Perancangan Konten Belajar Mata Pelajaran Informatika</h1>
+        <div class="subtitle">Topik: Literasi Digital – Memeriksa Kredibilitas Informasi & Data Teknis (Anti-Hoaks Teknis)</div>
+        
+        <div class="meta-grid">
+            <div class="meta-item">
+                <strong>Mata Pelajaran & Kelas</strong>
+                Informatika / Kelas X (Fase E SMK)
+            </div>
+            <div class="meta-item">
+                <strong>Alokasi Waktu</strong>
+                2 x 45 Menit
+            </div>
+            <div class="meta-item">
+                <strong>Bukti Karya Siswa</strong>
+                Lembar Audit Datasheet / Manual Digital
+            </div>
+            <div class="meta-item">
+                <strong>Indikator Penilaian Guru</strong>
+                1. Keterampilan memvalidasi keaslian data<br>
+                2. Ketepatan mengidentifikasi spesifikasi palsu
+            </div>
+        </div>
+
+        <div class="jurusan-tags">
+            <span class="tag">1. Teknik Audio Video (TAV)</span>
+            <span class="tag">2. Desain Teknik Furnitur (DTF)</span>
+            <span class="tag">3. Teknik Elektronika Industri (TEI)</span>
+            <span class="tag">4. Teknik Instalasi Tenaga Listrik (TITL)</span>
+            <span class="tag">5. Teknik Permesinan (TPM)</span>
+            <span class="tag">6. Teknik Pengelasan Listrik (TPL)</span>
+            <span class="tag">7. Teknik Konstruksi & Perumahan (TKP)</span>
+            <span class="tag">8. Teknik Kendaraan Ringan (TKR)</span>
+        </div>
+    </div>
+
+    <!-- ALUR AKTIVITAS PEMBELAJARAN -->
+    <h2>1. Alur Aktivitas Pembelajaran</h2>
+    <ol>
+        <li><strong>Orientasi & Stimulasi (15 Menit):</strong> Guru menampilkan dua dokumen teknis (satu asli dari produsen resmi, satu dokumen modifikasi/palsu dari forum yang tidak jelas). Siswa mendiskusikan risiko kegagalan fungsi, kerusakan alat, atau kecelakaan kerja jika menggunakan spesifikasi teknik yang salah/palsu di industri.</li>
+        <li><strong>Eksplorasi & Digital Check (20 Menit):</strong> Guru menjelaskan kriteria situs resmi (domain produsen, sertifikasi ISO/SNI, digital signature, atau repositori dokumen standar industri). Siswa mempelajari cara membandingkan parameter kunci: logo/tata letak datasheet, nomor seri, standar internasional, serta domain URL penyedia dokumen.</li>
+        <li><strong>Praktik Audit Independen (35 Menit):</strong> Siswa menerima file/tautan dokumen teknis acak sesuai jurusan masing-masing. Siswa mengisi Lembar Audit Datasheet / Manual Digital untuk mengecek keaslian dan mengidentifikasi anomali data.</li>
+        <li><strong>Presentasi & Evaluasi (20 Menit):</strong> Perwakilan siswa mempresentasikan temuan dokumen (Apakah data valid atau memuat spesifikasi palsu/rekayasa?). Umpan balik dari guru berdasarkan indikator validasi data teknis.</li>
+    </ol>
+
+    <!-- RINGKASAN STIMULUS PER JURUSAN -->
+    <h3>Tabel Ringkasan Objek Audit & Skenario per Jurusan</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Jurusan</th>
+                <th>Objek Audit / Bahan Uji</th>
+                <th>Parameter yang Diperiksa (Celah Pemalsuan)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Teknik Audio Video (TAV)</strong></td>
+                <td>Datasheet Transistor Final (contoh: Toshiba 2SC5200) atau IC Amplifier</td>
+                <td>Keaslian logo produsen, kapasitas daya watt maksimum, batas voltase (Vceo), dan format nomor lot produksi.</td>
+            </tr>
+            <tr>
+                <td><strong>Teknik Elektronika Industri (TEI)</strong></td>
+                <td>Datasheet Microcontroller / Sensor Industri (contoh: Sensor Suhu PT100, Sensor Proximity)</td>
+                <td>Batas toleransi tegangan masukan, kurva respon linieritas, dan domain penyedia dokumen asli vs dokumen hasil suntingan blog.</td>
+            </tr>
+            <tr>
+                <td><strong>Teknik Instalasi Tenaga Listrik (TITL)</strong></td>
+                <td>Katalog/Spesifikasi Kabel (NYM/NYA) & MCB (misal: Schneider/Legrand)</td>
+                <td>Ketersediaan nomor sertifikasi SNI/LMK, spesifikasi ketebalan isolator, dan rating pemutus arus (Kapasitas Pemutus / Icu).</td>
+            </tr>
+            <tr>
+                <td><strong>Teknik Permesinan (TPM)</strong></td>
+                <td>Datasheet Pahat Bubut (Insert Carbide) & Standar Baut High Tensile</td>
+                <td>Kode ISO insert (geometry & grade), toleransi ukuran (dalam mm/inci), dan tensile strength baut yang diubah di dokumen tidak resmi.</td>
+            </tr>
+            <tr>
+                <td><strong>Teknik Pengelasan Listrik (TPL)</strong></td>
+                <td>Spesifikasi Kawat Las (AWS E6013 / E7018) & Gas Shielding</td>
+                <td>Sertifikasi AWS (American Welding Society), komposisi kimia deposit las, dan rekomendasi kuat arus (Ampere) yang tidak realistis.</td>
+            </tr>
+            <tr>
+                <td><strong>Desain Teknik Furnitur (DTF)</strong></td>
+                <td>Standar Mutu Kayu Olahan / Perekat (SNI DTF/TKP & Standar Kelembaban/MC)</td>
+                <td>Klasifikasi kekuatan kayu, kadar air (Moisture Content %), dan sertifikasi ketahanan air pada lem kayu.</td>
+            </tr>
+            <tr>
+                <td><strong>Teknik Konstruksi & Perumahan (TKP)</strong></td>
+                <td>Manual Digital & Standar Material Semen / Baja Tulangan (SNI)</td>
+                <td>Diameter riil baja tulangan vs nominal, nilai kuat tekan beton (f'c), dan logo standar SNI yang dimodifikasi.</td>
+            </tr>
+            <tr>
+                <td><strong>Teknik Kendaraan Ringan (TKR)</strong></td>
+                <td>Manual Digital Service / Datasheet Oli Mesin & Busi</td>
+                <td>Kode Heat Range busi, tingkat viskositas oli (SAE & API Service), serta torque specification pemasangan baut kepala silinder.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- KAJIAN TEORI -->
+    <h2>2. Kajian Teori: Literasi Digital dan Verifikasi Data Teknis</h2>
+    <p>Literasi digital dalam dunia kejuruan (SMK) tidak sekadar mengenai cara menggunakan mesin pencari (search engine) atau media sosial, melainkan mencakup kemampuan kritis untuk menilai, memvalidasi, dan mengevaluasi data teknis berbasis digital (<em>Technical Digital Literacy</em>).</p>
+    <p>Dalam dunia industri dan rekayasa, penggunaan dokumen teknis seperti datasheet komponen, manual book digital, Mill Test Certificate (MTC), maupun standar material (SNI, ISO, AWS, IEC) merupakan fondasi utama sebelum proses produksi, instalasi, atau perbaikan dilakukan.</p>
+
+    <h3>Bahaya Hoaks Teknis dan Data Palsu di Industri</h3>
+    <p>Informasi teknis yang salah, palsu, atau hasil rekayasa (edited/modified PDF) di internet dapat menyebabkan dampak fatal, antara lain:</p>
+    <ul>
+        <li><strong>Kegagalan Sistem dan Malfungsi Alat:</strong> Komponen bekerja di luar batas toleransi yang sebenarnya.</li>
+        <li><strong>Kecelakaan Kerja (K3):</strong> Ledakan, kebakaran, atau runtuhnya struktur akibat material tidak sesuai spesifikasi.</li>
+        <li><strong>Kerugian Finansial:</strong> Kerusakan mesin produksi yang mahal (downtime) dan pembatalan proyek oleh konsumen.</li>
+    </ul>
+
+    <h3>Metode Validasi Kredibilitas Data Teknis Digital</h3>
+    <p>Untuk memvalidasi dokumen teknis, peserta didik wajib menerapkan metode verifikasi 4 langkah:</p>
+    
+    <div class="flow-container">
+        [Sumber/Domain URL] ──► [Metadata & Format File] ──► [Nomor Sertifikasi/Standar] ──► [Logika Parameter Teknis]
+    </div>
+
+    <ol>
+        <li><strong>Verifikasi Sumber Informasi (Domain & Repository):</strong> Pastikan dokumen diunduh dari situs web resmi produsen (official brand domain), portal sertifikasi nasional/internasional (misal: BSN, ISO, IEC), atau distributor terverifikasi (misal: Mouser, RS Components, McMaster-Carr). Waspadai dokumen dari forum terbuka, blog gratisan, atau platform file-sharing tanpa verifikasi identitas penerbit.</li>
+        <li><strong>Pemeriksaan Integritas Dokumen & Metadata:</strong> Cek properti file PDF (Properties/Metadata): Tanggal pembuatan, perangkat lunak pembuat, dan nama pengarang (author). Perhatikan anomali visual: Perubahan font yang tidak konsisten, resolusi logo yang kabur, atau garis tabel yang tidak rata yang mengindikasikan proses penyuntingan ulang (editing).</li>
+        <li><strong>Uji Silang Nomor Standar dan Sertifikasi:</strong> Cek keberadaan kode standar resmi (misal: SNI, AWS E6013, DIN, JIS). Lakukan klarifikasi kode/nomor sertifikat pada basis data publik lembaga sertifikasi (seperti pangkalan data BSN untuk SNI).</li>
+        <li><strong>Uji Logika Keterhubungan Parameter Teknis:</strong> Bandingkan nilai fisik/elektris pada dokumen dengan hukum/rumus dasar teknik (misal: Hubungan P = V x I dalam kelistrikan, atau korelasi antara dimensi dan kekuatan tarik material).</li>
+    </ol>
+
+    <!-- CONTOH KASUS DARI 8 JURUSAN -->
+    <h2>3. Contoh Kasus Ilustrasi Modul Praktik (Berdasarkan 8 Jurusan)</h2>
+
+    <div class="case-card">
+        <h4>1. Teknik Audio Video (TAV)</h4>
+        <p><strong>Kasus:</strong> Seorang teknisi mengunduh datasheet Transistor Final Power Amplifier (Toshiba 2SC5200) dari blog tidak resmi. Dokumen tersebut mencantumkan arus kolektor maksimum (Ic) sebesar 20 A dan tegangan Vceo = 250 V.</p>
+        <p><strong>Anomali/Analisis:</strong> Datasheet asli dari Toshiba menunjukkan Ic = 15 A dan Vceo = 230 V. Dokumen yang diunduh merupakan hasil rekayasa digital untuk menjual komponen palsu/KW seolah-olah memiliki daya lebih tinggi.</p>
+        <p><strong>Dampak:</strong> Penguat daya mengalami thermal runaway dan transistor meledak saat diuji pada beban maksimal.</p>
+    </div>
+
+    <div class="case-card">
+        <h4>2. Desain Teknik Furnitur (DTF)</h4>
+        <p><strong>Kasus:</strong> Ditemukan dokumen spesifikasi digital untuk lem kayu Polyurethane (PU) yang diklaim memiliki ketahanan air tingkat tinggi standar SNI/EN 204 klasifikasi D4.</p>
+        <p><strong>Anomali/Analisis:</strong> Setelah dicek pada situs resmi produsen dan lembaga uji, lem tersebut sebenarnya hanya berkualifikasi D2 (hanya untuk furnitur indoor kering). Gambar logo sertifikasi pada dokumen PDF merupakan tempelan editan.</p>
+        <p><strong>Dampak:</strong> Furnitur taman (outdoor) yang diproduksi mengalami kegagalan sambungan kayu dan lepas dalam waktu beberapa bulan terkena hujan.</p>
+    </div>
+
+    <div class="case-card">
+        <h4>3. Teknik Elektronika Industri (TEI)</h4>
+        <p><strong>Kasus:</strong> Lembar spesifikasi digital untuk Sensor Proximity Induktif Industri mencantumkan rentang tegangan operasional 5–30 V DC dengan tipe keluaran PNP/NPN Auto-detect.</p>
+        <p><strong>Anomali/Analisis:</strong> Pabrikan resmi sensor tersebut hanya memproduksi dua varian terpisah (12–24 V DC PNP atau NPN). Dokumen rekayasa diunggah oleh penjual pihak ketiga untuk memangkas stok barang.</p>
+        <p><strong>Dampak:</strong> Terjadi korsleting pada modul input PLC (Programmable Logic Controller) 24 V akibat kesalahan instalasi pinout.</p>
+    </div>
+
+    <div class="case-card">
+        <h4>4. Teknik Instalasi Tenaga Listrik (TITL)</h4>
+        <p><strong>Kasus:</strong> Sebuah manual book digital dan katalog kabel NYM 3 x 2,5 mm² mengklaim memiliki sertifikasi SNI dan LMK dengan ketahanan arus kontinu hingga 40 A.</p>
+        <p><strong>Anomali/Analisis:</strong> Menurut PUIL (Persyaratan Umum Instalasi Listrik) dan standar SNI, Kuat Hantar Arus (KHA) untuk kabel NYM 2,5 mm² dalam instalasi rumah/gedung adalah sekitar 25 A. Nilai 40 A pada dokumen digital tersebut direkayasa.</p>
+        <p><strong>Dampak:</strong> Pemilihan MCB yang salah (terlalu besar), menyebabkan isolasi kabel meleleh dan memicu kebakaran listrik sebelum MCB trip.</p>
+    </div>
+
+    <div class="case-card">
+        <h4>5. Teknik Permesinan (TPM)</h4>
+        <p><strong>Kasus:</strong> Operator mesin CNC mengunduh datasheet pahat bubut (Insert Carbide APKT 1604) dari forum internet yang menyarankan Kecepatan Potong (Cutting Speed / Vc) sebesar 450 m/menit untuk pemotongan baja karbon sedang.</p>
+        <p><strong>Anomali/Analisis:</strong> Katalog resmi produsen (Machining Data Handbook) hanya merekomendasikan Vc = 180–220 m/menit. File PDF yang beredar mengalami penyuntingan nilai parameter.</p>
+        <p><strong>Dampak:</strong> Ujung mata pahat (insert) pecah seketika (chipping), merusak benda kerja dan berisiko melukai operator.</p>
+    </div>
+
+    <div class="case-card">
+        <h4>6. Teknik Pengelasan Listrik (TPL)</h4>
+        <p><strong>Kasus:</strong> Dokumen spesifikasi teknis (Technical Data Sheet) kawat las AWS E7018 diunduh dari situs penyedia dokumen gratisan. Dokumen mengklaim kawat las tersebut tidak memerlukan proses pemanasan ulang (pre-heating/baking) sebelum digunakan.</p>
+        <p><strong>Anomali/Analisis:</strong> Standar AWS (American Welding Society) menegaskan bahwa elektroda tipe low-hydrogen seperti E7018 wajib melalui proses baking pada oven suhu 250–300°C untuk mencegah retak hidrogen (hydrogen cracking).</p>
+        <p><strong>Dampak:</strong> Hasil pengelasan sambungan konstruksi mengandung cacat retak dalam (underbead crack) dan gagal uji penetrant.</p>
+    </div>
+
+    <div class="case-card">
+        <h4>7. Teknik Konstruksi dan Perumahan (TKP)</h4>
+        <p><strong>Kasus:</strong> Mill Test Certificate (MTC) digital untuk produk Baja Tulangan Sirip (Batik) BjTS 420B ukuran 12 mm menunjukkan nilai Kuat Leleh (fy) sebesar 480 MPa dengan toleransi diameter 0,1 mm.</p>
+        <p><strong>Anomali/Analisis:</strong> Saat diverifikasi ke laboratorium uji independen dan membandingkan template MTC resmi pabrikan, ditemukan bahwa logo SNI dan nilai toleransi diameter telah disunting (sebenarnya merupakan besi non-standar/banci dengan diameter 10,8 mm).</p>
+        <p><strong>Dampak:</strong> Kekuatan struktur beton bertulang pada gedung lantai dua menurun drastis dan berisiko runtuh saat gempa.</p>
+    </div>
+
+    <div class="case-card">
+        <h4>8. Teknik Kendaraan Ringan (TKR)</h4>
+        <p><strong>Kasus:</strong> Dokumen Service Manual digital untuk mesin bensin injeksi mencantumkan spesifikasi celah busi (spark plug gap) sebesar 1,5 mm dan momen pengencangan 45 Nm.</p>
+        <p><strong>Anomali/Analisis:</strong> Manual book resmi dari manufaktur kendaraan menyatakan celah busi standar adalah 0,8–0,9 mm dan momen pengencangan maksimal 22 Nm. Dokumen digital yang digunakan siswa merupakan hasil pemindaian (scan) bermutu rendah yang telah diubah angkanya.</p>
+        <p><strong>Dampak:</strong> Ulir busi pada kepala silinder (cylinder head) aluminium slek/rusak dan timbul misfire pada sistem pengapian.</p>
+    </div>
+
+    <!-- MODUL PRAKTIK SISWA -->
+    <h2>4. Modul Praktik & Bukti Karya Siswa</h2>
+    <h3>Petunjuk Kerja Praktik Siswa (LKPS)</h3>
+    <ol>
+        <li>Akses file dokumen teknis (datasheet/manual book/standar material) yang dibagikan oleh guru atau carilah dokumen acak sesuai jurusan Anda di internet.</li>
+        <li>Lakukan audit terhadap keaslian dan kredibilitas dokumen tersebut dengan mengamati sumber URL, struktur visual, sertifikasi, dan logika parameter teknisnya.</li>
+        <li>Bandingkan dengan dokumen pembanding dari situs resmi produsen/badan sertifikasi nasional (BSN/ISO/AWS/IEC).</li>
+        <li>Isilah <strong>Lembar Audit Datasheet / Manual Digital</strong> di bawah ini sebagai <strong>Bukti Karya Siswa</strong>.</li>
+    </ol>
+
+    <!-- FORM UMUM HTML -->
+    <div class="form-box">
+        <div class="form-title">FORM UMUM: LEMBAR AUDIT DATASHEET / MANUAL DIGITAL</div>
+        
+        <div class="form-section-head">A. IDENTITAS SISWA DAN OBJEK AUDIT</div>
+        <div class="form-group">
+            <label>1. Nama Siswa</label>: <input type="text" placeholder="Isi nama lengkap siswa">
+        </div>
+        <div class="form-group">
+            <label>2. Kelas / Jurusan</label>: <input type="text" placeholder="X / Nama Jurusan">
+        </div>
+        <div class="form-group">
+            <label>3. Nama Komponen/Bahan</label>: <input type="text" placeholder="Contoh: Transistor 2SC5200 / Kabel NYM">
+        </div>
+        <div class="form-group">
+            <label>4. Judul Dokumen Audit</label>: <input type="text" placeholder="Judul datasheet / manual digital">
+        </div>
+        <div class="form-group">
+            <label>5. Sumber / URL File</label>: <input type="text" placeholder="https://...">
+        </div>
+
+        <div class="form-section-head">B. TAHAP AUDIT KREDIBILITAS DIGITAL</div>
+        
+        <p><strong>TAHAP 1: VERIFIKASI SUMBER & DOMAIN</strong></p>
+        <div class="form-group">
+            <span>Domain Web Sumber:</span>
+            <div class="form-options">
+                <label><input type="radio" name="domain_gen"> Resmi Produsen</label>
+                <label><input type="radio" name="domain_gen"> Forum/Blog</label>
+                <label><input type="radio" name="domain_gen"> Unidentified</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>Keberadaan Metadata:</span>
+            <div class="form-options">
+                <label><input type="radio" name="meta_gen"> Sesuai</label>
+                <label><input type="radio" name="meta_gen"> Ada Anomali/Re-edited</label>
+            </div>
+        </div>
+
+        <p><strong>TAHAP 2: VERIFIKASI SERTIFIKASI & LEGALITAS</strong></p>
+        <div class="form-group">
+            <label>Standar Tercantum</label>: <input type="text" placeholder="SNI / ISO / AWS / IEC / DIN / Lainnya">
+        </div>
+        <div class="form-group">
+            <span>Status Verifikasi:</span>
+            <div class="form-options">
+                <label><input type="radio" name="cert_gen"> Terdaftar & Valid</label>
+                <label><input type="radio" name="cert_gen"> Tidak Terdaftar / Logo Palsu</label>
+            </div>
+        </div>
+
+        <p><strong>TAHAP 3: VERIFIKASI PARAMETER TEKNIS (UJI SILANG)</strong></p>
+        <table class="form-table-inner">
+            <thead>
+                <tr>
+                    <th>Parameter Teknis yang Diperiksa</th>
+                    <th>Nilai pada Dokumen Audit (Uji)</th>
+                    <th>Nilai pada Sumber Resmi (Pembanding)</th>
+                    <th>Status (Sesuai / Palsu)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1. Arus / Voltase / Beban</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>2. Dimensi / Toleransi</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>3. Standar / Kualitas</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="form-section-head">C. ANALISIS TEMUAN & RESIKO K3 / REKAYASA</div>
+        <p style="font-size:13px; margin-bottom:5px;">(Jika ditemukan ketidaksesuaian / hoaks teknis):</p>
+        <div class="form-textarea" contenteditable="true"></div>
+
+        <div class="form-section-head">D. KESIMPULAN AUDIT</div>
+        <div class="form-options" style="flex-direction: column; gap:8px;">
+            <label><input type="radio" name="kesimpulan_gen"> <strong>DOKUMEN VALID / ASLI :</strong> Safe to use (Aman dijadikan acuan praktik/industri).</label>
+            <label><input type="radio" name="kesimpulan_gen"> <strong>DOKUMEN REKAYASA / PALSU :</strong> Unsafe / Hoaks Teknis (Dilarang digunakan!).</label>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-box">
+                Tanggal Audit: <input type="text" style="width:120px;" placeholder="Tgl/Bln/Thn"><br>
+                Tanda Tangan Siswa:
+                <div class="signature-space"></div>
+                (<input type="text" style="width:180px; text-align:center;" placeholder="Nama Siswa">)
+            </div>
+        </div>
+    </div>
+
+    <!-- FORM SPESIFIK PER JURUSAN -->
+    <h2>5. Form Bukti Karya Siswa Spesifik per 8 Jurusan</h2>
+
+    <!-- TOMBOL CETAK GLOBAL PADA SECTION 5 -->
+    <div class="btn-print-container">
+        <button type="button" class="btn-print" onclick="cetakDokumen()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Cetak / Simpan PDF Seluruh Dokumen Modul
+        </button>
+    </div>
+
+    <!-- 1. TAV -->
+    <h3>1. Teknik Audio Video (TAV)</h3>
+    <div class="btn-print-container">
+        <button type="button" class="btn-print" onclick="cetakFormSpesifik(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Cetak Form TAV (PDF)
+        </button>
+    </div>
+    <div class="form-box">
+        <div class="form-title">LEMBAR AUDIT DATASHEET / MANUAL DIGITAL (TEKNIK AUDIO VIDEO)</div>
+        
+        <div class="form-section-head">A. IDENTITAS SISWA DAN OBJEK AUDIT</div>
+        <div class="form-group"><label>1. Nama Siswa</label>: <input type="text"></div>
+        <div class="form-group"><label>2. Kelas / NISN</label>: <input type="text" placeholder="X TAV ..."></div>
+        <div class="form-group"><label>3. Nama Komponen</label>: <input type="text" placeholder="Contoh: Transistor 2SC5200 / TDA7294"></div>
+        <div class="form-group"><label>4. Judul Dokumen Audit</label>: <input type="text"></div>
+        <div class="form-group"><label>5. Sumber File / URL</label>: <input type="text"></div>
+
+        <div class="form-section-head">B. TAHAP AUDIT KREDIBILITAS DIGITAL</div>
+        <div class="form-group">
+            <span>1. Domain Web Sumber:</span>
+            <div class="form-options">
+                <label><input type="radio" name="dom_tav"> Official Domain (Toshiba/STMicroelectronics/TI)</label>
+                <label><input type="radio" name="dom_tav"> Forum Audio / Blog Gratisan</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>2. Metadata PDF File:</span>
+            <div class="form-options">
+                <label><input type="radio" name="meta_tav"> Asli Penerbit</label>
+                <label><input type="radio" name="meta_tav"> Terindikasi Suntingan / Scan Blur</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>3. Sertifikasi / Acuan:</span>
+            <div class="form-options">
+                <label><input type="radio" name="cert_tav"> Standar IEC / JIS / RoHS Terverifikasi</label>
+                <label><input type="radio" name="cert_tav"> Tidak Memiliki Standar Legal</label>
+            </div>
+        </div>
+
+        <div class="form-section-head">C. MATRIKS PARAMETER TEKNIS SPESIFIK TAV</div>
+        <table class="form-table-inner">
+            <thead>
+                <tr>
+                    <th>Parameter Teknis Utama</th>
+                    <th>Nilai pada Dokumen Audit</th>
+                    <th>Nilai Pembanding (Situs Resmi)</th>
+                    <th>Status Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. Collector-Emitter Volt (Vceo)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>2. Arus Kolektor Maks (Ic)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>3. Total Power Dissipation (Pc)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>4. Resp. Frekuensi / Thermal Rth</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </tbody>
+        </table>
+
+        <div class="form-section-head">D. ANALISIS RISIKO KERUSAKAN PERANGKAT & K3 AUDIO</div>
+        <p style="font-size:13px; margin-bottom:5px;">Potensi bahaya jika dipasang berdasarkan data audit (Thermal Runaway, Meledak, Distorsi):</p>
+        <div class="form-textarea" contenteditable="true"></div>
+
+        <div class="form-section-head">E. KESIMPULAN AUDIT</div>
+        <div class="form-options" style="flex-direction:column; gap:8px;">
+            <label><input type="radio" name="kes_tav"> <strong>VALID / ASLI :</strong> Safe to use (Aman untuk perakitan sistem audio/pengujian laboratorium).</label>
+            <label><input type="radio" name="kes_tav"> <strong>REKAYASA / PALSU :</strong> Unsafe / Hoaks Teknis (Dilarang digunakan dalam praktikum!).</label>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-box">
+                Tanggal Audit: <input type="text" style="width:110px;"><br>
+                Tanda Tangan Siswa:
+                <div class="signature-space"></div>
+                (<input type="text" style="width:170px; text-align:center;">)
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. DTF -->
+    <h3>2. Desain Teknik Furnitur (DTF)</h3>
+    <div class="btn-print-container">
+        <button type="button" class="btn-print" onclick="cetakFormSpesifik(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Cetak Form DTF (PDF)
+        </button>
+    </div>
+    <div class="form-box">
+        <div class="form-title">LEMBAR AUDIT DATASHEET / MANUAL DIGITAL (DESAIN TEKNIK FURNITUR)</div>
+        
+        <div class="form-section-head">A. IDENTITAS SISWA DAN OBJEK AUDIT</div>
+        <div class="form-group"><label>1. Nama Siswa</label>: <input type="text"></div>
+        <div class="form-group"><label>2. Kelas / NISN</label>: <input type="text" placeholder="X DTF ..."></div>
+        <div class="form-group"><label>3. Nama Material/Bahan</label>: <input type="text" placeholder="Kayu Olahan / Lem PU / Fitting"></div>
+        <div class="form-group"><label>4. Judul Dokumen Audit</label>: <input type="text"></div>
+        <div class="form-group"><label>5. Sumber File / URL</label>: <input type="text"></div>
+
+        <div class="form-section-head">B. TAHAP AUDIT KREDIBILITAS DIGITAL</div>
+        <div class="form-group">
+            <span>1. Domain Web Sumber:</span>
+            <div class="form-options">
+                <label><input type="radio" name="dom_dtf"> Web Resmi Produsen / Portal BSN</label>
+                <label><input type="radio" name="dom_dtf"> Blog Vendor / Forum Umum</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>2. Metadata PDF File:</span>
+            <div class="form-options">
+                <label><input type="radio" name="meta_dtf"> PDF Asli / Sertifikat Uji Labs</label>
+                <label><input type="radio" name="meta_dtf"> Gambar Edit / Logo Kabur</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>3. Acuan Standar Mutu:</span>
+            <div class="form-options">
+                <label><input type="radio" name="cert_dtf"> SNI DTF/TKP / EN 204 (D1-D4)</label>
+                <label><input type="radio" name="cert_dtf"> Tanpa Standardisasi Legitim</label>
+            </div>
+        </div>
+
+        <div class="form-section-head">C. MATRIKS PARAMETER TEKNIS SPESIFIK DTF</div>
+        <table class="form-table-inner">
+            <thead>
+                <tr>
+                    <th>Parameter Teknis Utama</th>
+                    <th>Nilai pada Dokumen Audit</th>
+                    <th>Nilai Pembanding (Situs Resmi)</th>
+                    <th>Status Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. Class Ketahanan Air (EN 204)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>2. Batas Kadar Air (MC %)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>3. Kuat Renggang/Kuat Rekat (MPa)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>4. Toleransi Ketebalan / Dimensi</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </tbody>
+        </table>
+
+        <div class="form-section-head">D. ANALISIS RISIKO KONSTRUKSI & KUALITAS FURNITUR</div>
+        <p style="font-size:13px; margin-bottom:5px;">Potensi risiko (Sambungan kayu lepas, melengkung, kegagalan beban):</p>
+        <div class="form-textarea" contenteditable="true"></div>
+
+        <div class="form-section-head">E. KESIMPULAN AUDIT</div>
+        <div class="form-options" style="flex-direction:column; gap:8px;">
+            <label><input type="radio" name="kes_dtf"> <strong>VALID / ASLI :</strong> Safe to use (Aman untuk acuan produksi & spesifikasi bahan).</label>
+            <label><input type="radio" name="kes_dtf"> <strong>REKAYASA / PALSU :</strong> Unsafe / Hoaks Teknis (Gagal standar mutu produk furnitur!).</label>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-box">
+                Tanggal Audit: <input type="text" style="width:110px;"><br>
+                Tanda Tangan Siswa:
+                <div class="signature-space"></div>
+                (<input type="text" style="width:170px; text-align:center;">)
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. TEI -->
+    <h3>3. Teknik Elektronika Industri (TEI)</h3>
+    <div class="btn-print-container">
+        <button type="button" class="btn-print" onclick="cetakFormSpesifik(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Cetak Form TEI (PDF)
+        </button>
+    </div>
+    <div class="form-box">
+        <div class="form-title">LEMBAR AUDIT DATASHEET / MANUAL DIGITAL (TEKNIK ELEKTRONIKA INDUSTRI)</div>
+        
+        <div class="form-section-head">A. IDENTITAS SISWA DAN OBJEK AUDIT</div>
+        <div class="form-group"><label>1. Nama Siswa</label>: <input type="text"></div>
+        <div class="form-group"><label>2. Kelas / NISN</label>: <input type="text" placeholder="X TEI ..."></div>
+        <div class="form-group"><label>3. Nama Perangkat</label>: <input type="text" placeholder="Sensor / Modul PLC / SSR"></div>
+        <div class="form-group"><label>4. Judul Dokumen Audit</label>: <input type="text"></div>
+        <div class="form-group"><label>5. Sumber File / URL</label>: <input type="text"></div>
+
+        <div class="form-section-head">B. TAHAP AUDIT KREDIBILITAS DIGITAL</div>
+        <div class="form-group">
+            <span>1. Domain Web Sumber:</span>
+            <div class="form-options">
+                <label><input type="radio" name="dom_tei"> Official Distributor (Omron/Schneider/Siemens)</label>
+                <label><input type="radio" name="dom_tei"> Blog Komunitas / Marketplace</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>2. Metadata PDF File:</span>
+            <div class="form-options">
+                <label><input type="radio" name="meta_tei"> Dokumen Asli Sistem Manajemen Pabrik</label>
+                <label><input type="radio" name="meta_tei"> PDF Modifikasi / Scan Ulang</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>3. Sertifikasi / Acuan:</span>
+            <div class="form-options">
+                <label><input type="radio" name="cert_tei"> Standardisasi CE / UL / IEC 61131</label>
+                <label><input type="radio" name="cert_tei"> Tanpa Sertifikasi Keamanan Industri</label>
+            </div>
+        </div>
+
+        <div class="form-section-head">C. MATRIKS PARAMETER TEKNIS SPESIFIK TEI</div>
+        <table class="form-table-inner">
+            <thead>
+                <tr>
+                    <th>Parameter Teknis Utama</th>
+                    <th>Nilai pada Dokumen Audit</th>
+                    <th>Nilai Pembanding (Situs Resmi)</th>
+                    <th>Status Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. Tegangan Operasional (V DC/AC)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>2. Output Logic Type (NPN/PNP)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>3. Response Time / Frekuensi</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>4. Isolation Voltage (Viso)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </tbody>
+        </table>
+
+        <div class="form-section-head">D. ANALISIS RISIKO OTOMASI & KESALAHAN SISTEM INDUSTRI</div>
+        <p style="font-size:13px; margin-bottom:5px;">Dampak terhadap sistem kontrol otomatisasi (Short circuit PLC, error sensor):</p>
+        <div class="form-textarea" contenteditable="true"></div>
+
+        <div class="form-section-head">E. KESIMPULAN AUDIT</div>
+        <div class="form-options" style="flex-direction:column; gap:8px;">
+            <label><input type="radio" name="kes_tei"> <strong>VALID / ASLI :</strong> Safe to use (Aman dihubungkan ke sistem otomatisasi industri).</label>
+            <label><input type="radio" name="kes_tei"> <strong>REKAYASA / PALSU :</strong> Unsafe / Hoaks Teknis (Berisiko merusak modul kontroler!).</label>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-box">
+                Tanggal Audit: <input type="text" style="width:110px;"><br>
+                Tanda Tangan Siswa:
+                <div class="signature-space"></div>
+                (<input type="text" style="width:170px; text-align:center;">)
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. TITL -->
+    <h3>4. Teknik Instalasi Tenaga Listrik (TITL)</h3>
+    <div class="btn-print-container">
+        <button type="button" class="btn-print" onclick="cetakFormSpesifik(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Cetak Form TITL (PDF)
+        </button>
+    </div>
+    <div class="form-box">
+        <div class="form-title">LEMBAR AUDIT DATASHEET / MANUAL DIGITAL (TEKNIK INSTALASI TENAGA LISTRIK)</div>
+        
+        <div class="form-section-head">A. IDENTITAS SISWA DAN OBJEK AUDIT</div>
+        <div class="form-group"><label>1. Nama Siswa</label>: <input type="text"></div>
+        <div class="form-group"><label>2. Kelas / NISN</label>: <input type="text" placeholder="X TITL ..."></div>
+        <div class="form-group"><label>3. Nama Perangkat/Kabel</label>: <input type="text" placeholder="MCB / Kabel NYM 3x2.5mm² / Contactor"></div>
+        <div class="form-group"><label>4. Judul Dokumen Audit</label>: <input type="text"></div>
+        <div class="form-group"><label>5. Sumber File / URL</label>: <input type="text"></div>
+
+        <div class="form-section-head">B. TAHAP AUDIT KREDIBILITAS DIGITAL</div>
+        <div class="form-group">
+            <span>1. Domain Web Sumber:</span>
+            <div class="form-options">
+                <label><input type="radio" name="dom_titl"> Situs Manufaktur Resmi / Database BSN (SNI)</label>
+                <label><input type="radio" name="dom_titl"> File Sharing / Blog Unverified</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>2. Metadata PDF File:</span>
+            <div class="form-options">
+                <label><input type="radio" name="meta_titl"> PDF Asli Terproteksi Produsen</label>
+                <label><input type="radio" name="meta_titl"> Terdapat Bekas Suntingan Teks/Tabel</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>3. Nomor Sertifikasi:</span>
+            <div class="form-options">
+                <label><input type="radio" name="cert_titl"> Nomor SNI / LMK Terverifikasi Aktif</label>
+                <label><input type="radio" name="cert_titl"> Nomor Sertifikat Fiktif / Tidak Terdaftar</label>
+            </div>
+        </div>
+
+        <div class="form-section-head">C. MATRIKS PARAMETER TEKNIS SPESIFIK TITL</div>
+        <table class="form-table-inner">
+            <thead>
+                <tr>
+                    <th>Parameter Teknis Utama</th>
+                    <th>Nilai pada Dokumen Audit</th>
+                    <th>Nilai Pembanding (Situs Resmi/PUIL)</th>
+                    <th>Status Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. Kuat Hantar Arus / KHA (Ampere)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>2. Capacity Breaking (Icu)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>3. Tegangan Isolasi Nominal (Ui)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>4. Luas Penampang Riil Konduktor</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </tbody>
+        </table>
+
+        <div class="form-section-head">D. ANALISIS RISIKO K3 & KEBAKARAN INSTALASI LISTRIK</div>
+        <p style="font-size:13px; margin-bottom:5px;">Analisis bahaya instalasi listrik (Kabel meleleh, MCB gagal trip):</p>
+        <div class="form-textarea" contenteditable="true"></div>
+
+        <div class="form-section-head">E. KESIMPULAN AUDIT</div>
+        <div class="form-options" style="flex-direction:column; gap:8px;">
+            <label><input type="radio" name="kes_titl"> <strong>VALID / ASLI :</strong> Safe to use (Sesuai dengan PUIL & Standar Keselamatan Listrik).</label>
+            <label><input type="radio" name="kes_titl"> <strong>REKAYASA / PALSU :</strong> Unsafe / Hoaks Teknis (Sangat berbahaya, potensi kebakaran!).</label>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-box">
+                Tanggal Audit: <input type="text" style="width:110px;"><br>
+                Tanda Tangan Siswa:
+                <div class="signature-space"></div>
+                (<input type="text" style="width:170px; text-align:center;">)
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. TPM -->
+    <h3>5. Teknik Permesinan (TPM)</h3>
+    <div class="btn-print-container">
+        <button type="button" class="btn-print" onclick="cetakFormSpesifik(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Cetak Form TPM (PDF)
+        </button>
+    </div>
+    <div class="form-box">
+        <div class="form-title">LEMBAR AUDIT DATASHEET / MANUAL DIGITAL (TEKNIK PERMESINAN)</div>
+        
+        <div class="form-section-head">A. IDENTITAS SISWA DAN OBJEK AUDIT</div>
+        <div class="form-group"><label>1. Nama Siswa</label>: <input type="text"></div>
+        <div class="form-group"><label>2. Kelas / NISN</label>: <input type="text" placeholder="X TPM ..."></div>
+        <div class="form-group"><label>3. Nama Komponen/Tool</label>: <input type="text" placeholder="Insert Carbide / Pahat HSS / Baut HT"></div>
+        <div class="form-group"><label>4. Judul Dokumen Audit</label>: <input type="text"></div>
+        <div class="form-group"><label>5. Sumber File / URL</label>: <input type="text"></div>
+
+        <div class="form-section-head">B. TAHAP AUDIT KREDIBILITAS DIGITAL</div>
+        <div class="form-group">
+            <span>1. Domain Web Sumber:</span>
+            <div class="form-options">
+                <label><input type="radio" name="dom_tpm"> Portal Machining Resmi (Sandvik/Iscar)</label>
+                <label><input type="radio" name="dom_tpm"> Forum Perkakas Bebas / Blog Rekayasa</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>2. Metadata PDF File:</span>
+            <div class="form-options">
+                <label><input type="radio" name="meta_tpm"> Dokumen Katalog Asli Manufaktur</label>
+                <label><input type="radio" name="meta_tpm"> PDF Konversi Rendah / Font Tidak Konsisten</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>3. Acuan Standar ISO:</span>
+            <div class="form-options">
+                <label><input type="radio" name="cert_tpm"> Kode ISO Insert & Toleransi Limiting Fits</label>
+                <label><input type="radio" name="cert_tpm"> Kode Spesifikasi Tidak Standar</label>
+            </div>
+        </div>
+
+        <div class="form-section-head">C. MATRIKS PARAMETER TEKNIS SPESIFIK TPM</div>
+        <table class="form-table-inner">
+            <thead>
+                <tr>
+                    <th>Parameter Teknis Utama</th>
+                    <th>Nilai pada Dokumen Audit</th>
+                    <th>Nilai Pembanding (Situs Resmi)</th>
+                    <th>Status Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. Kecepatan Potong (Vc m/min)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>2. Feed Rate / Pemakanan (fz)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>3. Kekerasan Material (HRC/HV)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>4. Toleransi Ukuran Presisi (mm)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </tbody>
+        </table>
+
+        <div class="form-section-head">D. ANALISIS RISIKO PROSES MACHINING & KESELAMATAN KERJA</div>
+        <p style="font-size:13px; margin-bottom:5px;">Bahaya teknis pemotongan (Pahat pecah/chipping, benda terlempar):</p>
+        <div class="form-textarea" contenteditable="true"></div>
+
+        <div class="form-section-head">E. KESIMPULAN AUDIT</div>
+        <div class="form-options" style="flex-direction:column; gap:8px;">
+            <label><input type="radio" name="kes_tpm"> <strong>VALID / ASLI :</strong> Safe to use (Aman digunakan sebagai parameter pemotongan).</label>
+            <label><input type="radio" name="kes_tpm"> <strong>REKAYASA / PALSU :</strong> Unsafe / Hoaks Teknis (Berisiko merusak benda kerja & pahat!).</label>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-box">
+                Tanggal Audit: <input type="text" style="width:110px;"><br>
+                Tanda Tangan Siswa:
+                <div class="signature-space"></div>
+                (<input type="text" style="width:170px; text-align:center;">)
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. TPL -->
+    <h3>6. Teknik Pengelasan Listrik (TPL)</h3>
+    <div class="btn-print-container">
+        <button type="button" class="btn-print" onclick="cetakFormSpesifik(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Cetak Form TPL (PDF)
+        </button>
+    </div>
+    <div class="form-box">
+        <div class="form-title">LEMBAR AUDIT DATASHEET / MANUAL DIGITAL (TEKNIK PENGELASAN LISTRIK)</div>
+        
+        <div class="form-section-head">A. IDENTITAS SISWA DAN OBJEK AUDIT</div>
+        <div class="form-group"><label>1. Nama Siswa</label>: <input type="text"></div>
+        <div class="form-group"><label>2. Kelas / NISN</label>: <input type="text" placeholder="X TPL ..."></div>
+        <div class="form-group"><label>3. Nama Material/Kawat</label>: <input type="text" placeholder="Elektroda E6013/E7018 / Gas Shielding"></div>
+        <div class="form-group"><label>4. Judul Dokumen Audit</label>: <input type="text"></div>
+        <div class="form-group"><label>5. Sumber File / URL</label>: <input type="text"></div>
+
+        <div class="form-section-head">B. TAHAP AUDIT KREDIBILITAS DIGITAL</div>
+        <div class="form-group">
+            <span>1. Domain Web Sumber:</span>
+            <div class="form-options">
+                <label><input type="radio" name="dom_tpl"> Produsen Kawat Las Resmi (Kobelco/Lincoln)</label>
+                <label><input type="radio" name="dom_tpl"> Web Download Umum Tanpa Uji</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>2. Metadata PDF File:</span>
+            <div class="form-options">
+                <label><input type="radio" name="meta_tpl"> Digital Certificate Ber-stempel Resmi</label>
+                <label><input type="radio" name="meta_tpl"> Terindikasi Suntingan Komposisi Kimia</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>3. Standar Pengelasan:</span>
+            <div class="form-options">
+                <label><input type="radio" name="cert_tpl"> AWS / ASME / ISO Welding Standard</label>
+                <label><input type="radio" name="cert_tpl"> Kode Elektroda Mengambang</label>
+            </div>
+        </div>
+
+        <div class="form-section-head">C. MATRIKS PARAMETER TEKNIS SPESIFIK TPL</div>
+        <table class="form-table-inner">
+            <thead>
+                <tr>
+                    <th>Parameter Teknis Utama</th>
+                    <th>Nilai pada Dokumen Audit</th>
+                    <th>Nilai Pembanding (Situs Resmi/AWS)</th>
+                    <th>Status Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. Kuat Arus Las / Ampere Range</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>2. Tensile Strength (Kuat Tarik)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>3. Ketentuan Baking/Pre-heating</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>4. Komposisi Kimia Deposit Las</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </tbody>
+        </table>
+
+        <div class="form-section-head">D. ANALISIS RISIKO CACAT LAS & KEGAGALAN STRUKTUR</div>
+        <p style="font-size:13px; margin-bottom:5px;">Potensi cacat las jika instruksi diikuti (Retak hidrogen, porositas tinggi):</p>
+        <div class="form-textarea" contenteditable="true"></div>
+
+        <div class="form-section-head">E. KESIMPULAN AUDIT</div>
+        <div class="form-options" style="flex-direction:column; gap:8px;">
+            <label><input type="radio" name="kes_tpl"> <strong>VALID / ASLI :</strong> Safe to use (Aman untuk Prosedur WPS).</label>
+            <label><input type="radio" name="kes_tpl"> <strong>REKAYASA / PALSU :</strong> Unsafe / Hoaks Teknis (Cacat las fatal, struktur gagal!).</label>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-box">
+                Tanggal Audit: <input type="text" style="width:110px;"><br>
+                Tanda Tangan Siswa:
+                <div class="signature-space"></div>
+                (<input type="text" style="width:170px; text-align:center;">)
+            </div>
+        </div>
+    </div>
+
+    <!-- 7. TKP -->
+    <h3>7. Teknik Konstruksi dan Perumahan (TKP)</h3>
+    <div class="btn-print-container">
+        <button type="button" class="btn-print" onclick="cetakFormSpesifik(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Cetak Form TKP (PDF)
+        </button>
+    </div>
+    <div class="form-box">
+        <div class="form-title">LEMBAR AUDIT DATASHEET / MANUAL DIGITAL (TEKNIK KONSTRUKSI DAN PERUMAHAN)</div>
+        
+        <div class="form-section-head">A. IDENTITAS SISWA DAN OBJEK AUDIT</div>
+        <div class="form-group"><label>1. Nama Siswa</label>: <input type="text"></div>
+        <div class="form-group"><label>2. Kelas / NISN</label>: <input type="text" placeholder="X TKP ..."></div>
+        <div class="form-group"><label>3. Nama Material Audit</label>: <input type="text" placeholder="Baja Tulangan (BjTS) / Semen / Beton"></div>
+        <div class="form-group"><label>4. Judul Dokumen Audit</label>: <input type="text"></div>
+        <div class="form-group"><label>5. Sumber File / URL</label>: <input type="text"></div>
+
+        <div class="form-section-head">B. TAHAP AUDIT KREDIBILITAS DIGITAL</div>
+        <div class="form-group">
+            <span>1. Domain Web Sumber:</span>
+            <div class="form-options">
+                <label><input type="radio" name="dom_tkp"> Pabrikan Baja Resmi / Portal BSN</label>
+                <label><input type="radio" name="dom_tkp"> Situs Penjualan Pihak Ketiga</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>2. Metadata PDF File:</span>
+            <div class="form-options">
+                <label><input type="radio" name="meta_tkp"> Hasil Uji Lab Asli Ber-watermark</label>
+                <label><input type="radio" name="meta_tkp"> Hasil Edit Manual Toleransi Diameter</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>3. Legitimasi SNI:</span>
+            <div class="form-options">
+                <label><input type="radio" name="cert_tkp"> SNI 2052 (Baja Tulangan) Terverifikasi</label>
+                <label><input type="radio" name="cert_tkp"> Logo SNI Tanpa Registrasi Valid</label>
+            </div>
+        </div>
+
+        <div class="form-section-head">C. MATRIKS PARAMETER TEKNIS SPESIFIK TKP</div>
+        <table class="form-table-inner">
+            <thead>
+                <tr>
+                    <th>Parameter Teknis Utama</th>
+                    <th>Nilai pada Dokumen Audit</th>
+                    <th>Nilai Pembanding (Situs Resmi/SNI)</th>
+                    <th>Status Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. Kuat Leleh Baja (fy MPa)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>2. Toleransi Diameter Riil (mm)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>3. Kuat Tekan Beton (f'c MPa)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>4. Regangan Minimum (Elongation)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </tbody>
+        </table>
+
+        <div class="form-section-head">D. ANALISIS RISIKO KEKUATAN STRUKTUR BANGUNAN</div>
+        <p style="font-size:13px; margin-bottom:5px;">Potensi risiko struktur jika material palsu (Besi banci, beton retak saat gempa):</p>
+        <div class="form-textarea" contenteditable="true"></div>
+
+        <div class="form-section-head">E. KESIMPULAN AUDIT</div>
+        <div class="form-options" style="flex-direction:column; gap:8px;">
+            <label><input type="radio" name="kes_tkp"> <strong>VALID / ASLI :</strong> Safe to use (Memenuhi standar SNI pekerjaan struktur).</label>
+            <label><input type="radio" name="kes_tkp"> <strong>REKAYASA / PALSU :</strong> Unsafe / Hoaks Teknis (Bahan di bawah standar keselamatan!).</label>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-box">
+                Tanggal Audit: <input type="text" style="width:110px;"><br>
+                Tanda Tangan Siswa:
+                <div class="signature-space"></div>
+                (<input type="text" style="width:170px; text-align:center;">)
+            </div>
+        </div>
+    </div>
+
+    <!-- 8. TKR -->
+    <h3>8. Teknik Kendaraan Ringan (TKR)</h3>
+    <div class="btn-print-container">
+        <button type="button" class="btn-print" onclick="cetakFormSpesifik(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            Cetak Form TKR (PDF)
+        </button>
+    </div>
+    <div class="form-box">
+        <div class="form-title">LEMBAR AUDIT DATASHEET / MANUAL DIGITAL (TEKNIK KENDARAAN RINGAN)</div>
+        
+        <div class="form-section-head">A. IDENTITAS SISWA DAN OBJEK AUDIT</div>
+        <div class="form-group"><label>1. Nama Siswa</label>: <input type="text"></div>
+        <div class="form-group"><label>2. Kelas / NISN</label>: <input type="text" placeholder="X TKR ..."></div>
+        <div class="form-group"><label>3. Nama Komponen/Oli</label>: <input type="text" placeholder="Manual Service / Oli Mesin / Busi"></div>
+        <div class="form-group"><label>4. Judul Dokumen Audit</label>: <input type="text"></div>
+        <div class="form-group"><label>5. Sumber File / URL</label>: <input type="text"></div>
+
+        <div class="form-section-head">B. TAHAP AUDIT KREDIBILITAS DIGITAL</div>
+        <div class="form-group">
+            <span>1. Domain Web Sumber:</span>
+            <div class="form-options">
+                <label><input type="radio" name="dom_tkr"> Portal Service Resmi Manufaktur (Toyota/Honda/Shell)</label>
+                <label><input type="radio" name="dom_tkr"> Forum Komunitas Otomotif / Blog Mandiri</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>2. Metadata PDF File:</span>
+            <div class="form-options">
+                <label><input type="radio" name="meta_tkr"> Workshop Manual Asli Manufaktur</label>
+                <label><input type="radio" name="meta_tkr"> Scan Kualitas Rendah / Modifikasi Teks</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <span>3. Standardisasi API:</span>
+            <div class="form-options">
+                <label><input type="radio" name="cert_tkr"> API Service Grade & Viskositas SAE Sesuai</label>
+                <label><input type="radio" name="cert_tkr"> Kode Grade Pelumas Tidak Terdaftar</label>
+            </div>
+        </div>
+
+        <div class="form-section-head">C. MATRIKS PARAMETER TEKNIS SPESIFIK TKR</div>
+        <table class="form-table-inner">
+            <thead>
+                <tr>
+                    <th>Parameter Teknis Utama</th>
+                    <th>Nilai pada Dokumen Audit</th>
+                    <th>Nilai Pembanding (Situs Resmi)</th>
+                    <th>Status Data</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1. Momen Pengencangan / Torque</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>2. Celah Busi / Spark Plug Gap</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>3. Viskositas Oli (SAE / API)</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+                <tr><td>4. Batas Keausan Toleransi Mesin</td><td><input type="text"></td><td><input type="text"></td><td><input type="text"></td></tr>
+            </tbody>
+        </table>
+
+        <div class="form-section-head">D. ANALISIS RISIKO KERUSAKAN ENGINE & KESELAMATAN BERKENDARA</div>
+        <p style="font-size:13px; margin-bottom:5px;">Risiko kerusakan mesin (Ulir baut slek, engine overheat, misfire):</p>
+        <div class="form-textarea" contenteditable="true"></div>
+
+        <div class="form-section-head">E. KESIMPULAN AUDIT</div>
+        <div class="form-options" style="flex-direction:column; gap:8px;">
+            <label><input type="radio" name="kes_tkr"> <strong>VALID / ASLI :</strong> Safe to use (Aman digunakan sebagai prosedur tune-up & overhaul).</label>
+            <label><input type="radio" name="kes_tkr"> <strong>REKAYASA / PALSU :</strong> Unsafe / Hoaks Teknis (Berisiko merusak komponen utama mesin!).</label>
+        </div>
+
+        <div class="signature-block">
+            <div class="signature-box">
+                Tanggal Audit: <input type="text" style="width:110px;"><br>
+                Tanda Tangan Siswa:
+                <div class="signature-space"></div>
+                (<input type="text" style="width:170px; text-align:center;">)
+            </div>
+        </div>
+    </div>
+
+    <!-- DRAF BAHAN UJI PRAKTIK -->
+    <h2>6. Draf Bahan Uji Praktik (Dokumen Asli & Dokumen Hoaks per Jurusan)</h2>
+
+    <!-- TAV -->
+    <h3>1. Teknik Audio Video (TAV)</h3>
+    <div class="doc-box doc-asli">
+        <span class="doc-title">Draf Dokumen A (ASLI)</span>
+        <div class="doc-header-title">TOSHIBA SEMICONDUCTOR TECHNICAL DATA SHEET</div>
+        <div class="doc-meta-sub">Document No: DS-2SC5200-REV3 | Source: www.toshiba-semicon.com/products/</div>
+        <hr>
+        <p><strong>Component:</strong> Silicon NPN Triple Diffused Type Transistor (Power Amp Applications)<br>
+        <strong>Part No:</strong> 2SC5200</p>
+        <p><strong>ABSOLUTE MAXIMUM RATINGS (Ta = 25°C):</strong></p>
+        <ul>
+            <li>Collector-Base Voltage (Vcbo): 230 V</li>
+            <li>Collector-Emitter Voltage (Vceo): 230 V</li>
+            <li>Emitter-Base Voltage (Vebo): 5 V</li>
+            <li>Collector Current (Ic): 15 A</li>
+            <li>Collector Power Dissipation (Pc): 150 W (Tc = 25°C)</li>
+            <li>Junction Temperature (Tj): 150°C</li>
+        </ul>
+        <p><strong>Compliance:</strong> RoHS Compliant | Standard: JIS C 7012 / IEC 60747</p>
+    </div>
+
+    <div class="doc-box doc-hoaks">
+        <span class="doc-title">Draf Dokumen B (HOAKS / REKAYASA)</span>
+        <div class="doc-header-title">TOSHIBA SUPER POWER TRANSISTOR DATASHEET</div>
+        <div class="doc-meta-sub">Document No: DS-2SC5200-MAX | Source: www.audio-diy-free-forum.net/downloads/</div>
+        <hr>
+        <p><strong>Component:</strong> Super NPN Audio Power Transistor (Extreme Edition)<br>
+        <strong>Part No:</strong> 2SC5200-GOLD</p>
+        <p><strong>ABSOLUTE MAXIMUM RATINGS (Ta = 25°C):</strong></p>
+        <ul>
+            <li>Collector-Base Voltage (Vcbo): 350 V</li>
+            <li>Collector-Emitter Voltage (Vceo): 300 V</li>
+            <li>Emitter-Base Voltage (Vebo): 12 V</li>
+            <li>Collector Current (Ic): 25 A</li>
+            <li>Collector Power Dissipation (Pc): 300 W (Tc = 25°C)</li>
+            <li>Junction Temperature (Tj): 200°C</li>
+        </ul>
+        <p><strong>Compliance:</strong> ISO 9001 Audio Grade (No Registration Number)</p>
+    </div>
+    <div class="kunci-jawaban">
+        <strong>Kunci Jawaban Audit Guru (Anomali Dokumen B):</strong><br>
+        1. <strong>Domain:</strong> Diunduh dari forum gratisan, bukan domain resmi Toshiba.<br>
+        2. <strong>Nilai Parameter Unrealistic:</strong> Nilai Vceo (300 V vs 230 V) dan Ic (25 A vs 15 A) dinaikkan secara rekayasa untuk menjual komponen palsu/KW.<br>
+        3. <strong>Teks Pemasaran:</strong> Menggunakan penamaan non-standar seperti "Super Power" dan "GOLD Edition".
+    </div>
+
+    <!-- DTF -->
+    <h3>2. Desain Teknik Furnitur (DTF)</h3>
+    <div class="doc-box doc-asli">
+        <span class="doc-title">Draf Dokumen A (ASLI)</span>
+        <div class="doc-header-title">KLEIBERIT ADHESIVES - TECHNICAL DATA SHEET</div>
+        <div class="doc-meta-sub">Doc ID: TDS-501.0-EN | Source: www.kleiberit.com/technical-docs/</div>
+        <hr>
+        <p><strong>Product Name:</strong> KLEIBERIT 501.0 (Polyurethane Assembly Adhesive)<br>
+        <strong>Application:</strong> Exterior Furniture, Window & Door Frame Joints</p>
+        <p><strong>TECHNICAL SPECIFICATIONS:</strong></p>
+        <ul>
+            <li>Water Resistance Class: D4 (According to DIN EN 204)</li>
+            <li>Moisture Content (Wood): 8% to 12% optimal</li>
+            <li>Pot Life (20°C): Approx. 20 minutes</li>
+            <li>Press Time (20°C): 45 to 60 minutes</li>
+            <li>Density: Approx. 1.13 g/cm³</li>
+            <li>Open Time (20°C): Approx. 20 minutes</li>
+        </ul>
+        <p><strong>Standard Certification:</strong> DIN EN 204 D4 | Certificate ID: BSN-SNI-EN204-9918</p>
+    </div>
+
+    <div class="doc-box doc-hoaks">
+        <span class="doc-title">Draf Dokumen B (HOAKS / REKAYASA)</span>
+        <div class="doc-header-title">KLEIBERIT SUPER BOND ADHESIVE - MANUAL DATA</div>
+        <div class="doc-meta-sub">Doc ID: TDS-501-EDIT | Source: www.kayu-furnitur-murah-blog.com/pdf/</div>
+        <hr>
+        <p><strong>Product Name:</strong> KLEIBERIT 501.0 (Instant Super PU Glue)<br>
+        <strong>Application:</strong> All Indoor & Outdoor Wood Joints</p>
+        <p><strong>TECHNICAL SPECIFICATIONS:</strong></p>
+        <ul>
+            <li>Water Resistance Class: D5 Super Waterproof (Extremely Waterproof Class)</li>
+            <li>Moisture Content (Wood): Any Moisture Level (0% to 100%)</li>
+            <li>Pot Life (20°C): Unlimited</li>
+            <li>Press Time (20°C): 2 minutes Instant Dry</li>
+            <li>Density: 2.50 g/cm³</li>
+            <li>Open Time (20°C): 1 minute</li>
+        </ul>
+        <p><strong>Standard Certification:</strong> EN 204 Class D5 (SNI Modified 2024)</p>
+    </div>
+    <div class="kunci-jawaban">
+        <strong>Kunci Jawaban Audit Guru (Anomali Dokumen B):</strong><br>
+        1. <strong>Klasifikasi Palsu:</strong> Klasifikasi "D5" tidak pernah ada pada standar DIN EN 204 (tingkat tertinggi adalah D4).<br>
+        2. <strong>Logika Teknis:</strong> Press time lem PU 2 menit dan moisture content hingga 100% secara teknis mustahil untuk konstruksi furnitur kayu.
+    </div>
+
+    <!-- TEI -->
+    <h3>3. Teknik Elektronika Industri (TEI)</h3>
+    <div class="doc-box doc-asli">
+        <span class="doc-title">Draf Dokumen A (ASLI)</span>
+        <div class="doc-header-title">OMRON INDUSTRIAL AUTOMATION SPECIFICATION SHEET</div>
+        <div class="doc-meta-sub">Doc No: E2E-X5ME1-DS-V1 | Source: www.ia.omron.com/products/family/40/</div>
+        <hr>
+        <p><strong>Device Name:</strong> Inductive Proximity Sensor (Unshielded M12)<br>
+        <strong>Model:</strong> E2E-X5ME1 2M</p>
+        <p><strong>SPECIFICATIONS:</strong></p>
+        <ul>
+            <li>Sensing Distance: 5 mm ±10%</li>
+            <li>Power Supply Voltage: 12 to 24 VDC (Ripple p-p 10% max., Operable 10 to 30 VDC)</li>
+            <li>Current Consumption: 13 mA max.</li>
+            <li>Control Output: NPN Open Collector (3-wire)</li>
+            <li>Response Frequency: 400 Hz</li>
+            <li>Degree of Protection: IEC 60529 IP67</li>
+        </ul>
+        <p><strong>Safety Standards:</strong> CE Marking, UL Listed (File No. E102580)</p>
+    </div>
+
+    <div class="doc-box doc-hoaks">
+        <span class="doc-title">Draf Dokumen B (HOAKS / REKAYASA)</span>
+        <div class="doc-header-title">OMRON UNIVERSAL PROXIMITY SENSOR DATASHEET</div>
+        <div class="doc-meta-sub">Doc No: E2E-UNIVERSAL-2024 | Source: www.tokoelektronika-diskon.com/manuals/</div>
+        <hr>
+        <p><strong>Device Name:</strong> Universal Long Range Proximity Sensor<br>
+        <strong>Model:</strong> E2E-X5ME1 ULTRA</p>
+        <p><strong>SPECIFICATIONS:</strong></p>
+        <ul>
+            <li>Sensing Distance: 50 mm (Super Long Range)</li>
+            <li>Power Supply Voltage: 5 to 220 V AC/DC Universal Voltage</li>
+            <li>Current Consumption: 0 mA (Zero Power Consumption)</li>
+            <li>Control Output: Auto Detect PNP/NPN/Relay (2-wire)</li>
+            <li>Response Frequency: 10.000 Hz (10 kHz)</li>
+            <li>Degree of Protection: IP69K Submersible</li>
+        </ul>
+        <p><strong>Safety Standards:</strong> CE Universal Approved (No Registration ID)</p>
+    </div>
+    <div class="kunci-jawaban">
+        <strong>Kunci Jawaban Audit Guru (Anomali Dokumen B):</strong><br>
+        1. <strong>Logika Fisika Sensor:</strong> Jarak deteksi 50 mm untuk sensor M12 induktif tidak logis (ukuran fisik 12 mm maksimal berjarak 4–5 mm).<br>
+        2. <strong>Catu Daya Unrealistic:</strong> Sensor induktif 3-kawat tidak mungkin beroperasi pada rentang universal 5–220 V AC/DC sekaligus.
+    </div>
+
+    <!-- TITL -->
+    <h3>4. Teknik Instalasi Tenaga Listrik (TITL)</h3>
+    <div class="doc-box doc-asli">
+        <span class="doc-title">Draf Dokumen A (ASLI)</span>
+        <div class="doc-header-title">KABEL METAL INDONESIA - KATALOG SPESIFIKASI KABEL INSTALASI</div>
+        <div class="doc-meta-sub">Doc Standard: KMI-NYM-2023 | Source: www.kabelmetal.co.id/technical-spec/</div>
+        <hr>
+        <p><strong>Kabel Type:</strong> NYM 3 x 2.5 mm² (Cu/PVC/PVC 300/500V)<br>
+        <strong>Standard:</strong> SNI 04-6629.4 / IEC 60227-4 / LMK Certification</p>
+        <p><strong>TECHNICAL PARAMETERS (Ambient Temp 30°C in Air):</strong></p>
+        <ul>
+            <li>Conductor Material: Plain Annealed Copper Wire (Solid Class 1)</li>
+            <li>Nominal Cross Area: 2.5 mm²</li>
+            <li>Insulation Thickness: 0.8 mm</li>
+            <li>Outer Sheath Thickness: 1.2 mm</li>
+            <li>Current Carrying Capacity: 25 A (KHA Maksimum Kontinu)</li>
+            <li>Short Circuit Current: 0.29 kA (1 second)</li>
+            <li>Conductor Resistance: Max 7.41 Ohm/km at 20°C</li>
+        </ul>
+        <p><strong>Certification Code:</strong> SNI 04-6629.4-2006 | LMK No: 112/LMK/2021</p>
+    </div>
+
+    <div class="doc-box doc-hoaks">
+        <span class="doc-title">Draf Dokumen B (HOAKS / REKAYASA)</span>
+        <div class="doc-header-title">KABEL SUPER POWER INDONESIA - KATALOG BROSHUR</div>
+        <div class="doc-meta-sub">Doc Standard: KMI-NYM-HEAVY | Source: www.mediafire.com/download/kabel-nym-40a/</div>
+        <hr>
+        <p><strong>Kabel Type:</strong> NYM 3 x 2.5 mm² High Ampere Edition<br>
+        <strong>Standard:</strong> SNI Super Heavy Duty 2024</p>
+        <p><strong>TECHNICAL PARAMETERS (Ambient Temp 30°C in Air):</strong></p>
+        <ul>
+            <li>Conductor Material: Copper Alloy Mixed</li>
+            <li>Nominal Cross Area: 2.5 mm²</li>
+            <li>Insulation Thickness: 0.4 mm (Thin Flexible Sheath)</li>
+            <li>Outer Sheath Thickness: 0.5 mm</li>
+            <li>Current Carrying Capacity: 45 A (KHA Maksimum Kontinu)</li>
+            <li>Short Circuit Current: 2.5 kA (1 second)</li>
+            <li>Conductor Resistance: 0.01 Ohm/km</li>
+        </ul>
+        <p><strong>Certification Code:</strong> SNI-SUPER-45AMP (No LMK Stamp)</p>
+    </div>
+    <div class="kunci-jawaban">
+        <strong>Kunci Jawaban Audit Guru (Anomali Dokumen B):</strong><br>
+        1. <strong>Pelanggaran PUIL:</strong> Kuat Hantar Arus (KHA) kabel 2,5 mm² ditulis 45 A (Padahal PUIL/SNI menetapkan maksimal ≈ 25 A). Mengikuti data ini akan menyebabkan MCB tidak trip dan kabel meleleh pemicu kebakaran.<br>
+        2. <strong>Ketebalan Isolasi:</strong> Nilai isolasi 0,4 mm terlalu tipis untuk kabel NYM bertegangan 300/500 V.
+    </div>
+
+    <!-- TPM -->
+    <h3>5. Teknik Permesinan (TPM)</h3>
+    <div class="doc-box doc-asli">
+        <span class="doc-title">Draf Dokumen A (ASLI)</span>
+        <div class="doc-header-title">ISCAR CUTTING TOOLS - TECHNICAL MACHINING DATA HANDBOOK</div>
+        <div class="doc-meta-sub">Doc ID: ISCAR-TURNING-2023 | Source: www.iscar.com/eCatalog/</div>
+        <hr>
+        <p><strong>Insert Designation:</strong> APKT 1003PDR-HM IC908 (Carbide Milling Insert)<br>
+        <strong>Workpiece Material:</strong> Steel (ISO P - Medium Carbon Steel, HB 180-220)</p>
+        <p><strong>RECOMMENDED CUTTING PARAMETERS:</strong></p>
+        <ul>
+            <li>Cutting Speed (Vc): 180 - 240 m/min</li>
+            <li>Feed per Tooth (fz): 0.08 - 0.15 mm/tooth</li>
+            <li>Depth of Cut (ap): 1.0 - 4.5 mm</li>
+            <li>Coating Type: PVD TiAlN + TiN Coating</li>
+            <li>Machine Rigidity: Medium - High</li>
+        </ul>
+        <p><strong>Standard Compliance:</strong> ISO 1832 / DIN 4987</p>
+    </div>
+
+    <div class="doc-box doc-hoaks">
+        <span class="doc-title">Draf Dokumen B (HOAKS / REKAYASA)</span>
+        <div class="doc-header-title">ISCAR EXTREME SPEED - CUTTING MANUAL (COMMUNITY EDITED)</div>
+        <div class="doc-meta-sub">Doc ID: ISCAR-SPEED-HACK | Source: www.cnc-operator-forum-free.org/docs/</div>
+        <hr>
+        <p><strong>Insert Designation:</strong> APKT 1003PDR-HM SUPER DIAMOND<br>
+        <strong>Workpiece Material:</strong> Steel (ISO P - Any Hardness Steel)</p>
+        <p><strong>RECOMMENDED CUTTING PARAMETERS:</strong></p>
+        <ul>
+            <li>Cutting Speed (Vc): 750 - 1000 m/min (Ultra High Speed)</li>
+            <li>Feed per Tooth (fz): 1.50 - 2.50 mm/tooth</li>
+            <li>Depth of Cut (ap): 15.0 mm (Single Pass)</li>
+            <li>Coating Type: Nano Diamond Coating (No Coolant Needed)</li>
+            <li>Machine Rigidity: Low / Manual Lathe OK</li>
+        </ul>
+        <p><strong>Standard Compliance:</strong> ISO Non-Standard Modification</p>
+    </div>
+    <div class="kunci-jawaban">
+        <strong>Kunci Jawaban Audit Guru (Anomali Dokumen B):</strong><br>
+        1. <strong>Parameter Pemotongan Rusak:</strong> Cutting Speed 750–1000 m/menit dan Depth of Cut 15 mm untuk insert kecil APKT 1003 akan menghancurkan pahat (chipping) dan membahayakan operator CNC.<br>
+        2. <strong>Istilah Non-Standar:</strong> Penambahan frasa "SUPER DIAMOND" dan "No Coolant Needed" tanpa rekomendasi grade resmi pabrikan.
+    </div>
+
+    <!-- TPL -->
+    <h3>6. Teknik Pengelasan Listrik (TPL)</h3>
+    <div class="doc-box doc-asli">
+        <span class="doc-title">Draf Dokumen A (ASLI)</span>
+        <div class="doc-header-title">KOBELCO WELDING CONSUMABLES - TECHNICAL DATA SHEET</div>
+        <div class="doc-meta-sub">Doc ID: KOBE-7018-TDS-R2 | Source: www.kobelco-welding.jp/english/products/</div>
+        <hr>
+        <p><strong>Classification:</strong> AWS A5.1 E7018 / EN ISO 2560-A-E 42 4 B<br>
+        <strong>Product Trade:</strong> LB-52 (Low Hydrogen Electrode) | Size: 4.0 mm x 400 mm</p>
+        <p><strong>MECHANICAL PROPERTIES & WELDING PARAMETERS:</strong></p>
+        <ul>
+            <li>Tensile Strength: 530 MPa (Requirement: Min 490 MPa)</li>
+            <li>Yield Strength: 460 MPa</li>
+            <li>Elongation: 30%</li>
+            <li>Re-baking Recommendation: 300 - 350°C for 60 minutes before use</li>
+            <li>Welding Current (DC+): 140 - 190 Ampere (Flat Position)</li>
+        </ul>
+        <p><strong>Certification Marks:</strong> ABS, BV, DNV, GL, LR, NK Approved</p>
+    </div>
+
+    <div class="doc-box doc-hoaks">
+        <span class="doc-title">Draf Dokumen B (HOAKS / REKAYASA)</span>
+        <div class="doc-header-title">KOBELCO EASY WELD - TECHNICAL DATA SHEET (UNVERIFIED)</div>
+        <div class="doc-meta-sub">Doc ID: KOBE-7018-NO-OVEN | Source: www.bengkel-las-online.com/downloads/</div>
+        <hr>
+        <p><strong>Classification:</strong> AWS A5.1 E7018 Heavy Duty<br>
+        <strong>Product Trade:</strong> LB-52 NO-BAKE EDITION | Size: 4.0 mm x 400 mm</p>
+        <p><strong>MECHANICAL PROPERTIES & WELDING PARAMETERS:</strong></p>
+        <ul>
+            <li>Tensile Strength: 980 MPa</li>
+            <li>Yield Strength: 890 MPa</li>
+            <li>Elongation: 5%</li>
+            <li>Re-baking Recommendation: NO BAKING/OVEN NEEDED (Direct Use Wet Condition OK)</li>
+            <li>Welding Current (DC+): 50 - 350 Ampere Range (Universal Current)</li>
+        </ul>
+        <p><strong>Certification Marks:</strong> Self Certified (No Classification Society Approval)</p>
+    </div>
+    <div class="kunci-jawaban">
+        <strong>Kunci Jawaban Audit Guru (Anomali Dokumen B):</strong><br>
+        1. <strong>Prosedur K3 & WPS Fatal:</strong> Mengklaim kawat las E7018 (Low Hydrogen) tidak memerlukan proses baking oven. Ini melanggar standar AWS A5.1 dan pasti memicu cacat retak hidrogen (hydrogen cracking).<br>
+        2. <strong>Nilai Mekanis Rekayasa:</strong> Nilai Tensile Strength 980 MPa tidak sesuai dengan standar E70 (E70 = Kuat tarik minimum 70.000 psi ≈ 490 MPa).
+    </div>
+
+    <!-- TKP -->
+    <h3>7. Teknik Konstruksi dan Perumahan (TKP)</h3>
+    <div class="doc-box doc-asli">
+        <span class="doc-title">Draf Dokumen A (ASLI)</span>
+        <div class="doc-header-title">PT KRAKATAU STEEL (PERSERO) Tbk - MILL TEST CERTIFICATE (MTC)</div>
+        <div class="doc-meta-sub">Certificate No: MTC-2023-KS-08921 | Source: www.krakatausteel.com/verify-mtc/</div>
+        <hr>
+        <p><strong>Material Name:</strong> Baja Tulangan Beton Sirip (BjTS 420B)<br>
+        <strong>Nominal Size:</strong> Diameter 12 mm (D12) | Length: 12.0 Meter</p>
+        <p><strong>LABORATORY TEST RESULTS (SNI 2052:2017 Compliance):</strong></p>
+        <ul>
+            <li>Actual Diameter (Mean): 11.8 mm (Tolerance: ±0.4 mm | Pass)</li>
+            <li>Yield Strength (fy): 445 MPa (Standard: 420 - 540 MPa)</li>
+            <li>Tensile Strength (fu): 560 MPa (Standard: Min 525 MPa)</li>
+            <li>TS/YS Ratio: 1.25 (Standard: Min 1.25)</li>
+            <li>Elongation: 18% (Standard: Min 14%)</li>
+        </ul>
+        <p><strong>Official Stamp:</strong> PT Krakatau Steel Quality Assurance Lab | SNI NPB: 1-102-002-210</p>
+    </div>
+
+    <div class="doc-box doc-hoaks">
+        <span class="doc-title">Draf Dokumen B (HOAKS / REKAYASA)</span>
+        <div class="doc-header-title">PT KRAKATAU STEEL - MILL TEST CERTIFICATE (SCAN EDITED)</div>
+        <div class="doc-meta-sub">Certificate No: MTC-2023-KS-EDIT | Source: www.distributor-besi-murah.co.id/mtc/</div>
+        <hr>
+        <p><strong>Material Name:</strong> Baja Tulangan Beton Sirip Super (BjTS 420B)<br>
+        <strong>Nominal Size:</strong> Diameter 12 mm (D12-Banci) | Length: 12.0 Meter</p>
+        <p><strong>LABORATORY TEST RESULTS (SNI Standard Modified):</strong></p>
+        <ul>
+            <li>Actual Diameter (Mean): 10.2 mm (Tolerance: ±1.8 mm Allowed)</li>
+            <li>Yield Strength (fy): 620 MPa</li>
+            <li>Tensile Strength (fu): 650 MPa</li>
+            <li>TS/YS Ratio: 1.04</li>
+            <li>Elongation: 4%</li>
+        </ul>
+        <p><strong>Official Stamp:</strong> Copy Stamped (No SNI NPB Registration Code)</p>
+    </div>
+    <div class="kunci-jawaban">
+        <strong>Kunci Jawaban Audit Guru (Anomali Dokumen B):</strong><br>
+        1. <strong>Besi Banci / Toleransi Ilegal:</strong> Diameter riil tercatat 10,2 mm pada label nominal D12 (Toleransi toleran SNI 2052:2017 untuk D12 hanya ±0,4 mm, batas bawah adalah 11,6 mm).<br>
+        2. <strong>Rasio TS/YS Cacat:</strong> Rasio 560/445 = 1,04 tidak memenuhi standar keselamatan gempa yang mensyaratkan rasio minimal 1,25.
+    </div>
+
+    <!-- TKR -->
+    <h3>8. Teknik Kendaraan Ringan (TKR)</h3>
+    <div class="doc-box doc-asli">
+        <span class="doc-title">Draf Dokumen A (ASLI)</span>
+        <div class="doc-header-title">TOYOTA SERVICE MANUAL DIGITAL - ENGINE REPAIR SECTION</div>
+        <div class="doc-meta-sub">Doc Ref: ESM-1NR-VE-ENG | Source: www.toyota-tech.eu/maintenance/</div>
+        <hr>
+        <p><strong>Target Engine:</strong> 1NR-VE (1,329 cc Dual VVT-i)<br>
+        <strong>Section:</strong> Cylinder Head & Ignition System Tightening Specs</p>
+        <p><strong>REPAIR PARAMETERS & TORQUE SPECIFICATIONS:</strong></p>
+        <ul>
+            <li>Cylinder Head Bolt Tightening: Step 1 = 36 Nm, Step 2 = Turn 90°, Step 3 = Turn 90°</li>
+            <li>Spark Plug Type & Gap: FK07R-A8 (Iridium) | Gap: 1.0 mm to 1.1 mm</li>
+            <li>Spark Plug Torque: 18 Nm (183 kgf·cm)</li>
+            <li>Recommended Engine Oil: SAE 0W-20, API Grade SN/SP Flexible</li>
+        </ul>
+        <p><strong>Standard Reference:</strong> OEM Toyota Service Workshop Manual Publication 2022</p>
+    </div>
+
+    <div class="doc-box doc-hoaks">
+        <span class="doc-title">Draf Dokumen B (HOAKS / REKAYASA)</span>
+        <div class="doc-header-title">TOYOTA MANIA TUNING MANUAL - ENGINE SPECIFICATIONS</div>
+        <div class="doc-meta-sub">Doc Ref: ESM-TUNING-HACK | Source: www.otodiy-forum-modifikasi.com/manuals/</div>
+        <hr>
+        <p><strong>Target Engine:</strong> 1NR-VE All Series<br>
+        <strong>Section:</strong> High Performance Engine Setting</p>
+        <p><strong>REPAIR PARAMETERS & TORQUE SPECIFICATIONS:</strong></p>
+        <ul>
+            <li>Cylinder Head Bolt Tightening: Single Step = 140 Nm (Direct Torque)</li>
+            <li>Spark Plug Type & Gap: Standard Copper Plug | Gap: 2.2 mm (Ultra Wide Gap)</li>
+            <li>Spark Plug Torque: 60 Nm (Maximum Tightness)</li>
+            <li>Recommended Engine Oil: SAE 20W-50 Heavy Duty Mineral Oil</li>
+        </ul>
+        <p><strong>Standard Reference:</strong> Community Racing Specification (No OEM Warranty)</p>
+    </div>
+    <div class="kunci-jawaban">
+        <strong>Kunci Jawaban Audit Guru (Anomali Dokumen B):</strong><br>
+        1. <strong>Kerusakan Komponen (Torque Slek):</strong> Pengencangan baut kepala silinder 140 Nm sekaligus tanpa tahapan sudut (90°) dan torsi busi 60 Nm akan memutus baut atau merusak ulir aluminium head cylinder.<br>
+        2. <strong>Spesifikasi Pelumas Salah:</strong> Penggunaan oli SAE 20W-50 pada mesin modern berteknologi Dual VVT-i (seharusnya SAE 0W-20/5W-30) akan menyumbat saluran VVT-i dan memicu overheat.
+    </div>
+
+    <!-- INDIKATOR DAN RUBRIK -->
+    <h2>7. Indikator & Rubrik Penilaian Guru</h2>
+    <p>Penilaian dilakukan menggunakan skala ordinal <strong>0, 1, 2, 3, dan 4</strong> berdasarkan dua indikator utama.</p>
+
+    <h3>Matriks Rubrik Penilaian Guru</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Indikator Penilaian</th>
+                <th>Skala 0<br>(Tidak Ada Bukti)</th>
+                <th>Skala 1<br>(Sangat Kurang)</th>
+                <th>Skala 2<br>(Cukup)</th>
+                <th>Skala 3<br>(Baik)</th>
+                <th>Skala 4<br>(Sangat Baik / Mahir)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Keterampilan Memvalidasi Keaslian Data Teknis</strong><br><small>(Kemampuan memeriksa domain, metadata, sertifikasi resmi, dan membandingkan sumber data)</small></td>
+                <td>Siswa tidak mengumpulkan Lembar Audit atau tidak melakukan proses verifikasi sama sekali.</td>
+                <td>Siswa hanya mencatat nama file tanpa memeriksa sumber URL, domain, metadata, atau sertifikasi dokumen teknis.</td>
+                <td>Siswa mampu memeriksa sumber URL tetapi tidak melakukan cross-check dokumen ke situs resmi pabrikan/badan standar.</td>
+                <td>Siswa mampu memvalidasi sumber domain dan melakukan cross-check ke situs resmi pabrikan dengan bantuan petunjuk guru.</td>
+                <td>Siswa secara mandiri, cepat, dan akurat memvalidasi domain, metadata PDF, serta kelayakan sertifikasi (SNI/ISO/AWS/IEC) pada sumber resmi.</td>
+            </tr>
+            <tr>
+                <td><strong>2. Ketepatan Mengidentifikasi Spesifikasi Palsu/Salah</strong><br><small>(Kemampuan menemukan anomali angka, penyuntingan visual, dan analisis risiko teknis)</small></td>
+                <td>Siswa tidak mengisi tabel parameter teknis dan tidak menemukan anomali apapun pada dokumen.</td>
+                <td>Siswa salah menentukan status dokumen (menganggap dokumen rekayasa/palsu sebagai dokumen asli yang valid atau sebaliknya).</td>
+                <td>Siswa mampu mengidentifikasi adanya perbedaan data, namun tidak mampu menjelaskan parameter mana yang salah secara logis.</td>
+                <td>Siswa mampu mengidentifikasi parameter teknis yang salah/dipalsukan dengan tepat serta menjelaskan alasannya secara terstruktur.</td>
+                <td>Siswa mampu mengidentifikasi seluruh parameter teknis yang salah/rekayasa dengan presisi tinggi dan mampu menganalisis dampak risiko K3/kerusakan alat secara komprehensif.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="formula-box">
+        FORMULA PERHITUNGAN NILAI AKHIR:<br>
+        Nilai Akhir = [ (Skor Indikator 1 + Skor Indikator 2) / 8 ] x 100
+    </div>
+
+    <h3>Kategori Bimbingan & Tuntas Belajar</h3>
+    <ul>
+        <li><strong>0 – 49:</strong> Belum Mencapai Ketuntasan (Perlu Bimbingan Ulang Total).</li>
+        <li><strong>50 – 74:</strong> Cukup (Perlu Perbaikan pada Analisis Parameter).</li>
+        <li><strong>75 – 89:</strong> Baik (Tercapai Kompetensi Literasi Digital Teknis).</li>
+        <li><strong>90 – 100:</strong> Sangat Baik / Mahir (Siswa Mampu Menjadi Peer Tutor / Auditor Data Teknis).</li>
+    </ul>
+
+<!-- 6. PENGUMPULAN TUGAS (SIFORGAS) -->
+    <section>
+        <h2>6. PENGUMPULAN TUGAS SISWA</h2>
+        <div class="submission-box">
+            <h3>🚀 Pengumpulan Tugas Akhir Modul</h3>
+            <p>Setelah seluruh rangkaian kegiatan modul praktik 1 sampai 4 selesai dilakukan dan dokumen akhir berformat PDF (<code>Surat_Penawaran_[NamaSiswa].pdf</code>) telah siap, silakan kumpulkan file tugas Anda melalui portal resmi <strong>SIFORGAS</strong>.</p>
+            <a href="https://sites.google.com/guru.smk.belajar.id/lms-merdeka-belajar/portal-utama/siforgas" target="_blank" rel="noopener noreferrer" class="btn-submit">
+                📤 Kumpulkan Tugas ke SIFORGAS
+            </a>
+        </div>
+    </section>
+</div>
+
+<script>
+    // Cetak Seluruh Dokumen Modul
+    function cetakDokumen() {
+        document.body.classList.remove('print-single');
+        document.querySelectorAll('.print-target-active').forEach(function(el) {
+            el.classList.remove('print-target-active');
+        });
+        window.print();
+    }
+
+    // Cetak KHUSUS Form Jurusan yang Dipilih Saja
+    function cetakFormSpesifik(btnElement) {
+        // Bersihkan penanda cetak sebelumnya
+        document.querySelectorAll('.print-target-active').forEach(function(el) {
+            el.classList.remove('print-target-active');
+        });
+
+        // Cari form-box terdekat dari tombol yang diklik
+        var container = btnElement.closest('.btn-print-container');
+        var targetForm = container ? container.nextElementSibling : null;
+
+        if (targetForm && targetForm.classList.contains('form-box')) {
+            targetForm.classList.add('print-target-active');
+            document.body.classList.add('print-single');
+
+            window.print();
+
+            // Kembalikan tampilan semula setelah jendela cetak ditutup
+            setTimeout(function() {
+                document.body.classList.remove('print-single');
+                targetForm.classList.remove('print-target-active');
+            }, 500);
+        } else {
+            window.print();
+        }
+    }
+</script>
+
+</body>
+</html>
